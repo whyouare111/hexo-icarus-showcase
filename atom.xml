@@ -6,7 +6,7 @@
   <link href="https://whyouare111.github.io/hexo-icarus-showcase/atom.xml" rel="self"/>
   
   <link href="https://whyouare111.github.io/hexo-icarus-showcase/"/>
-  <updated>2021-01-11T09:37:19.573Z</updated>
+  <updated>2021-01-19T09:25:06.063Z</updated>
   <id>https://whyouare111.github.io/hexo-icarus-showcase/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>开放式社交媒体</title>
+    <link href="https://whyouare111.github.io/hexo-icarus-showcase/2021/01/12/open-social/"/>
+    <id>https://whyouare111.github.io/hexo-icarus-showcase/2021/01/12/open-social/</id>
+    <published>2021-01-12T05:14:38.915Z</published>
+    <updated>2021-01-19T09:25:06.063Z</updated>
+    
+    <content type="html"><![CDATA[<div id="hexo-plugin-matataki" data-wpm="解锁失败了呢。如果你是博客作者遇到这个问题，看看保险箱的键值对是否设置正确呢" data-whm="好像文章加密的时候的时候遗漏了几页呢，不过这些剩下的内容还是可以看看啦">    <div class="hpm-input-container">        <div class="symbol-line">            <img src="https://ssimg.frontenduse.top/image/2019/09/30/f6bb15a48c91bb872045c471bf45af07.png" class="hpm-avatar" />            <div class="message">持有<span class="purple"> 0.01岛岛币 (DAO) </span>解锁文章</div>        </div>        <div style="display: flex;justify-content: flex-end;width: 100%;">            <a href="https://developer.matataki.io/app/e4de41ef463501f0/oauth"><div id="login-btn">解锁</div></a>            <div id="unlock-btn">解锁</div>        </div>    </div>    <script id="hpmToken" type="hpmToken">22</script>    <script id="hpmAmount" type="hpmAmount">0.01</script>    <script id="hpmName" type="hpmName">FanLockerPassword</script>    <script id="hpmData" type="hpmData" data-hmacdigest="c1592e48815116d15b6d571b3e3ca5fa13321f17ec303141177157a6c11da1cb">67e60b868a83179b1de0b831000a16b7feb4ded605ef9165df7ed8f073f86bfd1667b3ec510152a69ba2f05656f90211048a0af1874ebbfeb67a74475b627dae3434f77ddd601df086633252df7bf74082e3c5192d6a4be249e68203a4b84ab0bf22af8a91db6ad80868b10cb9823ccc2d3ff4ac7fd73b35eaea5ea629dc7645414a462e285e889bd9bfb76567a083878e8a74c07118d862ffbfb532716233d37c3a71bf07b8cf10434e66010e70cb2a642b37227464783a6e2a6e40331cbf3a701a3e789698e9056cb4370eadc802627eb045a30115b371b49fc26b194528b1cb2899808f579d9069fca40534c56c09bea82cdb39d6182d43075859a07cd910d4fb90f4c2641d3ea7c44d706243650ef398e3609b606a274a951fd0325880cc39bcc7ad7be679ce4fdd01aa2caf56d68c80d64459d90751214eed5279c65180096cd2afbd2102864c01a0a691d15b0842557d66e80534dff33e6161014c12540ebc09f3a4b396af2bdcc926f98d99ec3d2d1722c4044c6b5486fbd2fa99d3fd8015e66563f97c4e7dc994a6827d8cd91643f87a9cd3ff6f5b1d524096ffa70db614d1b58187b186c8b6be341e6b2cf9858b239deb4d87d0c570d714379a26389ce22393445a036e72026c16d8f75a461a6e463102ac7ae30de41dcc9a1f477c570c23263048494f2e744f41c6ef9304cd708aa7bb8bb05e31c416bc59c249cf3c9e014031062b947c9e04a9ed3a0475a5f781f53a6f75a0ca67db67125fdc6c949aaf5205b4c9b04a33adacce1eea20be78d6b3a4e2f7db06a50b37360df5097027b9d7482fc025728f517137f5c7050fa7748436ec016b9a0e229112997882ceae9611e832de312c811f8cb9e6d4ca405a1b3fa06492ad0fa1b42c3b3dd90dc6ffc6a3ca4090ff5234f8728ad0964940f882a76e1aefbd1c812b2e86eecf0e3e3e9ccd2078d879b43c9e38362739ddb46ad8aa9e82a428ec42c82ffe4aff92b15a8d6b14a580ba3b088ac8aaceeab65b98ec1474d3cfedf65529f65018d43b024ea9d090501bdf9769e97e5b3f4f08610a87c3cefb0036adeaf5098958dac416e0bc7ca528fd37433870b1b15dfeb447876561bd3efddfeaff315bace70c73de8cebea32c413a8678c143923ca3ede1ed875d6826e495294f11e760f665a44d02be7b0f63a1f4af9fe3803264cf8f6a97248c7c94061f91ce4ce4dd72d073b7f66d256ac7dfad9a7e92a7d00914609cd985e1e36c0668e1d96e034cb8aef8aa83f32e5f2e3b6454947def4b5df76d89cc8bedad37023e8079a81714a8c1d10c63b317788a83e946e5c53274b2e3bd9b206513f44391eb3806007d51b43f5e3b1ec760518f93205c0a814577247df4a881f2f5072dcee0e5c4231eb40aaf4799aa1417ce3802279e33467726b5036817dac372cda821775cf3b7de314ad4657598b8963421ea997e91ff486b1b18ba99d502d4dce4c7e5b41c2cc501d2cd38993d03ec63056491a17a565c85dcd5568ac29a92a1c652a50a5e1b2e829a7cb78ed595a416f98a438678428f700b023ddce7b863e0ae0e0d6957ca9aa81a17ef82b99bf75bd9e81c8a5cdd2a65cfc081d09747417ac00550237228dc1ec48a3334c372ff214a9f9c5f3616a9b0d13f17c3d5865277345f9eb414b61e636e4259ce367c136f2052ed9e7771332d5c540d281581624a47bf2b10711daa18661ae5e9321cb0d40ea0e5b62b3479a7c19a9e953a80e4a33f1b41b2085f33241cffad50080f788ada0169fd55f47e6f16122dd995b8fb3ca63f9a48fdb55ad910aeb35d76e408617dc9e5617999f5ec89250b519028abd95c62b7422b5260e39c2f343e556cadc087c4d9bf786665dca343038b5229949d1b8eccdb2cc0d9b69c495b7a08280a8e6a32f1a30dbbb7d500ddaa7fb95c53e7062749e11cc8993a5525c0a8c74f0cf510114c2bee440f4a7852e4d2f7a2551d689302faa0ae8d33fae84c7af5b59262a81ea25048653e0df5810265d1732f0c5d7ecff8cb6bf1680bfa0b79ad6e5971f8f56f41f21562dfe3c3c4b31807214403a90aef4a3afec5ee312ad79dac4cd635d685762bff58506289b1f299317b0612ef5ecd3e73dc61fe6e17010deddc51b41cfaa1b7bb5580f72e24074967b146f4e7b7a663a423fef08fd1f2d177c33117e355c71ed38ed4d71aa6b8d07914c632d3c58eb8ad5ebab45eb53a53b92414b89c757f9e3a87e37b245f87267d5f8d59e978d8dbc2d29cdb5776fbc77f3bfa598a776e76f8d6d530edeebf3f70e60eec1c71d92b0e4281551b3cbcc31d1c0ca3702f3d7424da4f917407c141337f1061d4f150898e57ed795396cc9c1f47c500b05e9c498c5ed8a7ab87f6f35b59545b7142bdc7b05b2bb577231633d0c7487bc582c1aeb32079f052653972419ea70597aa563f093602ef49bf1b83bf8fa0fb43b230c4ece91ca6f676001372149e843ba901e342bba1481ff4fe9f91f675acebde155ecd5bb22de10bb71d4899ace7b5a36f304b1bf3a13aa24d32c13c454d26982ca55d81951663464</script></div></script><link href="/hexo-icarus-showcase/css/hpm.css" rel="stylesheet" type="text/css">]]></content>
+    
+    
+    <summary type="html">这篇文章使用了 Fan 票加密，持有0.01岛岛币 (DAO) 来解锁文章</summary>
+    
+    
+    
+    <category term="explore" scheme="https://whyouare111.github.io/hexo-icarus-showcase/categories/explore/"/>
+    
+    
+    <category term="Fediverse" scheme="https://whyouare111.github.io/hexo-icarus-showcase/tags/Fediverse/"/>
+    
+    <category term="瞬Matataki" scheme="https://whyouare111.github.io/hexo-icarus-showcase/tags/%E7%9E%ACMatataki/"/>
+    
+    <category term="Fan票" scheme="https://whyouare111.github.io/hexo-icarus-showcase/tags/Fan%E7%A5%A8/"/>
+    
+    <category term="IndieWeb" scheme="https://whyouare111.github.io/hexo-icarus-showcase/tags/IndieWeb/"/>
+    
+  </entry>
   
   <entry>
     <title>Matataki架构的一些思考</title>
@@ -63,20 +90,20 @@
   </entry>
   
   <entry>
-    <title>Tab页示例</title>
+    <title>Fediverse生态应用</title>
     <link href="https://whyouare111.github.io/hexo-icarus-showcase/2021/01/06/bulma-demo/"/>
     <id>https://whyouare111.github.io/hexo-icarus-showcase/2021/01/06/bulma-demo/</id>
     <published>2021-01-06T04:00:00.000Z</published>
-    <updated>2021-01-06T10:44:17.278Z</updated>
+    <updated>2021-01-19T09:22:16.541Z</updated>
     
-    <content type="html"><![CDATA[<div class="tabs is-toggle"><ul><li class="is-active"><a onclick="onTabClick(event)"><span class="icon is-small"><i class="fas fa-image" aria-hidden="true"></i></span><span>Pictures</span></a></li><li><a onclick="onTabClick(event)"><span class="icon is-small"><i class="fas fa-music" aria-hidden="true"></i></span><span>Music</span></a></li><li><a onclick="onTabClick(event)"><span class="icon is-small"><i class="fas fa-film" aria-hidden="true"></i></span><span>Videos</span></a></li><li><a onclick="onTabClick(event)"><span class="icon is-small"><i class="far fa-file-alt" aria-hidden="true"></i></span><span>Documents</span></a></li></ul></div><div id="Pictures" class="tab-content" style="display: block;"><p><a href="https://pixabay.com/zh/">Pixabay</a> 是全球知名的图库网站及充满活力的创意社区,拥有上百万张免费正版高清照片素材,涵盖风景、人物、动态、静物等多种分类,你可以在任何地方使用 Pixabay 图库中的素材…</p></div><div id="Music" class="tab-content"><p><a href="https://music.163.com/">网易云音乐</a> 是一款专注于发现与分享的音乐产品,依托专业音乐人、DJ、好友推荐及社交功能,为用户打造全新的音乐生活。</p></div><div id="Videos" class="tab-content"><p><a href="https://www.bilibili.com/">哔哩哔哩</a> 是国内知名的视频弹幕网站,这里有最及时的动漫新番,最棒的ACG氛围,最有创意的Up主。大家可以在这里找到许多欢乐。</p></div><div id="Documents" class="tab-content"><p><a href="https://shimo.im/">石墨文档</a> 是全新一代云 Office 办公软件,支持多人在线协作编辑文档和表格,独有内容级安全,全过程留痕可追溯。PC 端和移动端全覆盖,随时随地远程办公。即写即存…</p></div><style type="text/css">.content .tabs ul { margin: 0; }.tab-content { display: none; }</style><script>function onTabClick (event) {    var tabTitle = $(event.currentTarget).children('span:last-child').text();    $('.article .content .tab-content').css('display', 'none');    $('.article .content .tabs li').removeClass('is-active');    $('#' + tabTitle).css('display', 'block');    $(event.currentTarget).parent().addClass('is-active');}</script><p>来源： <a href="https://www.imaegoo.com/2020/icarus-with-bulma/">活用 Bulma 美化 Icarus 文章</a></p>]]></content>
+    <content type="html"><![CDATA[<div class="tabs is-toggle"><ul><li class="is-active"><a onclick="bulmaDemo.onTabClick(event)"><span class="icon is-small"><i class="fab fa-mastodon" aria-hidden="true"></i></span><span>Microblog</span></a></li><li><a onclick="bulmaDemo.onTabClick(event)"><span class="icon is-small"><i class="fas fa-image" aria-hidden="true"></i></span><span>Pictures</span></a></li><li><a onclick="bulmaDemo.onTabClick(event)"><span class="icon is-small"><i class="fas fa-music" aria-hidden="true"></i></span><span>Music</span></a></li><li><a onclick="bulmaDemo.onTabClick(event)"><span class="icon is-small"><i class="fas fa-film" aria-hidden="true"></i></span><span>Videos</span></a></li><li><a onclick="bulmaDemo.onTabClick(event)"><span class="icon is-small"><i class="far fa-file-alt" aria-hidden="true"></i></span><span>Writing</span></a></li></ul></div><div id="Microblog" class="tab-content" style="display: block;"><p><a href="https://pixelfed.org/">Mastodon</a>  is an open source decentralized social network - by the people for the people. Join the federation and take back control of your social media!</p></div><div id="Pictures" class="tab-content" style="display: block;"><p><a href="https://pixelfed.org/">Pixelfed</a> is an activitypub based image sharing platform.</p></div><div id="Music" class="tab-content"><p><a href="https://funkwhale.audio/">Funkwhale</a> is a community-driven project that lets you listen and share music and audio within a decentralized, open network.</p></div><div id="Videos" class="tab-content"><p><a href="https://joinpeertube.org/">PeerTube</a> developed by Framasoft, is the free and decentralized alternative to video platforms, providing you over 400,000 videos published by 60,000 users and viewed over 15 million times. </p></div><div id="Writing" class="tab-content"><p><a href="(https://writefreely.org/">WriteFreely</a> is free and open source software for easily publishing writing on the web. Use it to start a personal blog — or an entire community.</p></div><style type="text/css">.content .tabs ul { margin: 0; }.tab-content { display: none; }</style><script>var bulmaDemo = {    onTabClick : function (event) {        var tabTitle = $(event.currentTarget).children('span:last-child').text();        $('.article .content .tab-content').css('display', 'none');        $('.article .content .tabs li').removeClass('is-active');        $('#' + tabTitle).css('display', 'block');        $(event.currentTarget).parent().addClass('is-active');    }};</script><hr><p>参考： <a href="https://www.imaegoo.com/2020/icarus-with-bulma/">活用 Bulma 美化 Icarus 文章</a></p>]]></content>
     
     
       
       
     <summary type="html">&lt;div class=&quot;tabs is-toggle&quot;&gt;&lt;ul&gt;
-&lt;li class=&quot;is-active&quot;&gt;&lt;a onclick=&quot;onTabClick(event)&quot;&gt;
-&lt;span class=&quot;icon is-small&quot;&gt;&lt;i class=&quot;fas fa-image&quot; a</summary>
+&lt;li class=&quot;is-active&quot;&gt;&lt;a onclick=&quot;bulmaDemo.onTabClick(event)&quot;&gt;
+&lt;span class=&quot;icon is-small&quot;&gt;&lt;i class=&quot;fab f</summary>
       
     
     
@@ -87,6 +114,8 @@
     <category term="Bulma" scheme="https://whyouare111.github.io/hexo-icarus-showcase/tags/Bulma/"/>
     
     <category term="Icarus" scheme="https://whyouare111.github.io/hexo-icarus-showcase/tags/Icarus/"/>
+    
+    <category term="Fediverse" scheme="https://whyouare111.github.io/hexo-icarus-showcase/tags/Fediverse/"/>
     
   </entry>
   
