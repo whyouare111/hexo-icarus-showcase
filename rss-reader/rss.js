@@ -27,8 +27,8 @@ fetch('urls.json').then((res) => {
 									let temp = document.importNode(document.querySelector('template').content, true);
 									let i = item.querySelector.bind(item)
 									let t = temp.querySelector.bind(temp)
-									t('h2').textContent = !!i('title') ? i('title').textContent : '-'
-									t('a').textContent = t('a').href = !!i('link') ? i('link').textContent : '#'
+									t('a').textContent = !!i('title') ? i('title').textContent : '-'
+									t('a').href = !!i('link') ? i('link').textContent : '#'
 									t('p').innerHTML = !!i('description') ? i('description').textContent : '-'
 									frag.appendChild(temp)
 								})
