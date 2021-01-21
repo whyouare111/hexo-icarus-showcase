@@ -23,7 +23,7 @@ fetch('urls.json').then((res) => {
 							/* Parse the RSS Feed and display the content */
 							try {
 								let doc = DOMPARSER(xmlTxt, "text/xml")
-								let heading = document.createElement('h2')
+								let heading = document.createElement('h1')
 								heading.textContent = url.hostname
 								frag.appendChild(heading)
 								doc.querySelectorAll('item').forEach((item) => {
