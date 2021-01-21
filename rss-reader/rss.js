@@ -23,9 +23,6 @@ fetch('urls.json').then((res) => {
                     /* Parse the RSS Feed and display the content */
                     try {
                         let doc = DOMPARSER(xmlTxt, "text/xml")
-                        let heading = document.createElement('h1')
-                        heading.textContent = url.hostname
-                        frag.appendChild(heading)
                         doc.querySelectorAll('item').forEach((item) => {
                             let temp = document.importNode(document.querySelector('template').content, true);
                             let i = item.querySelector.bind(item)
@@ -33,7 +30,6 @@ fetch('urls.json').then((res) => {
                             t('h2').textContent = !!i('title') ? i('title').textContent : '-'
                             t('a').textContent = t('a').href = !!i('link') ? i('link').textContent : '#'
                             t('p').innerHTML = !!i('description') ? i('description').textContent : '-'
-                            t('h3').textContent = url.hostname
                             frag.appendChild(temp)
                         })
                     } catch (e) {
