@@ -1,5 +1,5 @@
-function loadRss(urls) {
-	
+function loadRss(urls, limit) {
+
 	const DOMPARSER = new DOMParser().parseFromString.bind(new DOMParser())
 	var frag = document.createDocumentFragment()
 	var hasBegun = true
@@ -12,7 +12,11 @@ function loadRss(urls) {
 			return
 		}
 
-		fetch('/proxy/?csurl=' + encodeURIComponent(url) + '&ts=' + new Date().getTime()).then((res) => {
+		fetch('/proxy.php', {
+			headers: {
+				'X-Proxy-url': url
+			}
+		}).then((res) => {
 
 			res.text().then((xmlTxt) => {
 				/* Parse the RSS Feed and display the content */
@@ -28,8 +32,12 @@ function loadRss(urls) {
 
 					frag.appendChild(heading)
 					// frag.appendChild(document.createElement('hr'));
-					let items = doc.querySelectorAll('item');															
-					items.forEach((item) => {
+					let items = doc.querySelectorAll('item');
+					for (let i = 0; i < items.length; i++) {
+						if (!!limit && i >= limit) {
+							break;
+						}
+						let item = items[i];
 						let temp = document.importNode(document.querySelector('template').content, true);
 						let i = item.querySelector.bind(item)
 						let t = temp.querySelector.bind(temp)
@@ -37,7 +45,8 @@ function loadRss(urls) {
 						t('a').href = !!i('link') ? i('link').textContent : '#'
 						t('p').innerHTML = !!i('description') ? i('description').textContent : '-'
 						frag.appendChild(temp)
-					})
+					}
+
 				} catch (e) {
 					console.error('Error in parsing the feed')
 				}
@@ -49,5 +58,5 @@ function loadRss(urls) {
 			})
 		}).catch(() => console.error('Error in fetching the RSS feed'))
 
-	})
+	});
 }
