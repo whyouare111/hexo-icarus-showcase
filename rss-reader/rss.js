@@ -15,7 +15,8 @@ function loadRss(urls, limit) {
 		fetch('/proxy.php', {
 			headers: {
 				'X-Proxy-url': url
-			}
+			},
+			cache: "no-cache"
 		}).then((res) => {
 
 			res.text().then((xmlTxt) => {
@@ -33,11 +34,11 @@ function loadRss(urls, limit) {
 					frag.appendChild(heading)
 					// frag.appendChild(document.createElement('hr'));
 					let items = doc.querySelectorAll('item');
-					for (let i = 0; i < items.length; i++) {
-						if (!!limit && i >= limit) {
+					for (let k = 0; k < items.length; k++) {
+						if (!!limit && k>= limit) {
 							break;
 						}
-						let item = items[i];
+						let item = items[k];
 						let temp = document.importNode(document.querySelector('template').content, true);
 						let i = item.querySelector.bind(item)
 						let t = temp.querySelector.bind(temp)
