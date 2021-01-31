@@ -6,7 +6,7 @@
   <link href="https://whyouare111.github.io/hexo-icarus-showcase/atom.xml" rel="self"/>
   
   <link href="https://whyouare111.github.io/hexo-icarus-showcase/"/>
-  <updated>2021-01-19T09:25:06.063Z</updated>
+  <updated>2021-01-31T11:53:38.626Z</updated>
   <id>https://whyouare111.github.io/hexo-icarus-showcase/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Mastodon Integration</title>
+    <link href="https://whyouare111.github.io/hexo-icarus-showcase/2021/01/31/Mastodon-Integration/"/>
+    <id>https://whyouare111.github.io/hexo-icarus-showcase/2021/01/31/Mastodon-Integration/</id>
+    <published>2021-01-31T11:52:35.000Z</published>
+    <updated>2021-01-31T11:53:38.626Z</updated>
+    
+    <content type="html"><![CDATA[<p>Test RSS-&gt;Mastodon-&gt;Webmention-&gt;Share</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;Test RSS-&amp;gt;Mastodon-&amp;gt;Webmention-&amp;gt;Share&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>开放式社交媒体</title>
