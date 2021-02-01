@@ -1,6 +1,6 @@
 (function (webmastodon) {
+    // var url = 'https://whyouare111.github.io/hexo-icarus-showcase/2021/01/08/matataki-auth/';
     var url = window.location.href;
-    var url = 'https://whyouare111.github.io/hexo-icarus-showcase/2021/01/08/matataki-auth/';
     var webmentionBaseUrl = webmastodon.webmentionBaseUrl;
     var mastodonBaseUrl = webmastodon.mastodonBaseUrl;
 
