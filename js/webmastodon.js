@@ -1,8 +1,13 @@
-(function (webmastodonConfig) {
+(function (webmastodon) {
     var url = window.location.href;
-    // var url = 'https://whyouare111.github.io/hexo-icarus-showcase/2021/01/08/matataki-auth/';
-    var webmentionBaseUrl = webmastodonConfig.webmentionBaseUrl;
-    var mastodonBaseUrl = webmastodonConfig.mastodonBaseUrl;
+    var url = 'https://whyouare111.github.io/hexo-icarus-showcase/2021/01/08/matataki-auth/';
+    var webmentionBaseUrl = webmastodon.webmentionBaseUrl;
+    var mastodonBaseUrl = webmastodon.mastodonBaseUrl;
+
+    var openModal = function(url){
+        window.open(url,'mastodon-intent','width=445,height=600,resizable=no,menubar=no,status=no,scrollbars=yes');
+    };
+
     fetch(webmentionBaseUrl + "/api/mentions.jf2?target=" + encodeURIComponent(url))
         .then(function (response) {
             return response.json();
@@ -13,13 +18,20 @@
             })[0];
 
             if (!!mastodonMention) {
-                document.querySelector('a.mastodon-reply').href = mastodonMention['wm-source'];
-                document.querySelector('a.mastodon-reblog').href = mastodonMention['wm-source'].replace('reply', 'reblog');
-                document.querySelector('a.mastodon-favourite').href = mastodonMention['wm-source'].replace('reply', 'favourite');
+                webmastodon.reply  = function(){
+                    openModal(mastodonMention['wm-source']);
+                };
+                webmastodon.reblog  = function(){
+                    openModal(mastodonMention['wm-source'].replace('reply', 'reblog'));
+                };
+                webmastodon.favourite  = function(){
+                    openModal(mastodonMention['wm-source']).replace('reply', 'favourite');
+                };
+
             }
         })
         .catch(function (ex) {
             console.error('fetch mastodon webmention error' + ex);
         });
-})(window.webmastodonConfig);
+})(window.webmastodon);
 
