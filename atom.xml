@@ -6,7 +6,7 @@
   <link href="https://whyouare111.github.io/hexo-icarus-showcase/atom.xml" rel="self"/>
   
   <link href="https://whyouare111.github.io/hexo-icarus-showcase/"/>
-  <updated>2021-01-31T11:53:38.626Z</updated>
+  <updated>2021-02-01T02:20:05.015Z</updated>
   <id>https://whyouare111.github.io/hexo-icarus-showcase/</id>
   
   <author>
@@ -21,15 +21,17 @@
     <link href="https://whyouare111.github.io/hexo-icarus-showcase/2021/01/31/Mastodon-Integration/"/>
     <id>https://whyouare111.github.io/hexo-icarus-showcase/2021/01/31/Mastodon-Integration/</id>
     <published>2021-01-31T11:52:35.000Z</published>
-    <updated>2021-01-31T11:53:38.626Z</updated>
+    <updated>2021-02-01T02:20:05.015Z</updated>
     
-    <content type="html"><![CDATA[<p>Test RSS-&gt;Mastodon-&gt;Webmention-&gt;Share</p>]]></content>
+    <content type="html"><![CDATA[<p>(RSS-&gt;Mastodon)-&gt;Webmention-&gt;Share</p><ol><li>用hexo生成atom.xml文件，即Blog文章的订阅源</li><li>用Huginn/IFTTT/自定义bot等订阅1的RSS源，对每一条目调用Mastodon API POST statuses，content为<code>我发布了博客文章： &#123;title&#125; &#123;url&#125;</code></li><li>取2的response body，解析为JSON对象，取其id，即为toot的id</li><li>调用telegraph API， source为3中返回的id拼装出的url <code>https://&#123;mastodonDomain&#125;/interact/&#123;statusId&#125;?type=reply</code>,target为RSS每个条目的url，调用telegraph会把这个消息发送给对应的webmention server</li><li>在blog模板添加“分享”脚本，调用webmention API，获取页面收到的webmentio</li><li>过滤5中获取的webmention，过滤出由自己mastodon实例发出的webmention（根据域名和作者），取其url，即4中的url，把url设置到[回复]链接上；把<code>reply</code>替换成<code>reblog</code>,把url设置到[转嘟]链接上；把<code>reply</code>替换成<code>favourite</code>，设置到[喜欢]链接上</li></ol>]]></content>
     
     
       
       
-    <summary type="html">&lt;p&gt;Test RSS-&amp;gt;Mastodon-&amp;gt;Webmention-&amp;gt;Share&lt;/p&gt;
-</summary>
+    <summary type="html">&lt;p&gt;(RSS-&amp;gt;Mastodon)-&amp;gt;Webmention-&amp;gt;Share&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;用hexo生成atom.xml文件，即Blog文章的订阅源&lt;/li&gt;
+&lt;li&gt;用Huginn/IFTTT/自定义bot等订阅1的RSS源，对每一条目调用Mast</summary>
       
     
     
