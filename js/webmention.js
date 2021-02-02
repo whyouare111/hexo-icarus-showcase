@@ -1,5 +1,6 @@
 (function (webmentionContext) {
     // var url = 'https://whyouare111.github.io/hexo-icarus-showcase/2021/01/08/matataki-auth/';
+    // var url = 'https://whyouare111.github.io/hexo-icarus-showcase/2021/02/02/webmention-demo/';
     var url = window.location.href;
     var webmentionBaseUrl = webmentionContext.baseUrl;
 
