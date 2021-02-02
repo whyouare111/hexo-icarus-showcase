@@ -6,7 +6,7 @@
   <link href="https://whyouare111.github.io/hexo-icarus-showcase/atom.xml" rel="self"/>
   
   <link href="https://whyouare111.github.io/hexo-icarus-showcase/"/>
-  <updated>2021-02-01T03:07:57.434Z</updated>
+  <updated>2021-02-02T01:25:22.749Z</updated>
   <id>https://whyouare111.github.io/hexo-icarus-showcase/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Webmention Demo</title>
+    <link href="https://whyouare111.github.io/hexo-icarus-showcase/2021/02/02/webmention-demo/"/>
+    <id>https://whyouare111.github.io/hexo-icarus-showcase/2021/02/02/webmention-demo/</id>
+    <published>2021-02-02T01:23:45.000Z</published>
+    <updated>2021-02-02T01:25:22.749Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Micro-blog"><a href="#Micro-blog" class="headerlink" title="Micro.blog"></a>Micro.blog</h2><p>Micro.blog会把博文和回复作为Webmention来对待</p><p><a href="https://micro.blog/freddy/10948125">https://micro.blog/freddy/10948125</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;Micro-blog&quot;&gt;&lt;a href=&quot;#Micro-blog&quot; class=&quot;headerlink&quot; title=&quot;Micro.blog&quot;&gt;&lt;/a&gt;Micro.blog&lt;/h2&gt;&lt;p&gt;Micro.blog会把博文和回复作为Webmention来对待&lt;/p&gt;
+&lt;</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Mastodon Integration</title>
