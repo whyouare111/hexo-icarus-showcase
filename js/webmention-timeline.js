@@ -1,10 +1,11 @@
 window.addEventListener('load', function () {
-    var webmentionsPromise = window.webmentionContext.webmentionsPromise;
-    var mastodonContext = window.mastodonContext;
+    const webmentionsPromise = window.webmentionContext.webmentionsPromise;
+    const mastodonContext = window.mastodonContext;
+    const webmentionTimelineMessages = window.webmentionTimelineMessages;
 
     webmentionsPromise && webmentionsPromise
         .then(function (data) {
-            var html = '';
+            let html = '';
             data.children.forEach(function (item) {
                 if (!(mastodonContext && item.url.startsWith(mastodonContext.mastodonBaseUrl))) {
                     html += `<article class="media"><div class="media-content"><p class="article-meta level-left">`;
@@ -23,7 +24,7 @@ window.addEventListener('load', function () {
                     html += `<time class="level-item" datetime="${item.published}">${item.published.split('T')[0]}</time></p><p class="title level-left"><i class="level-item">🔗</i><a target="_blank" href="${item.url}" rel="noopener" class="level-item">${item.url}</a></p></div></article>`;
                 }
                 else {
-                    html += `<article class="media"><div class="media-content"><p class="title level-right"><span class="level-item">🐘</span><span class="level-item"><a target="_blank" href="${item.url}" rel="noopener">联邦宇宙入口</a></span></p></article></div>`;
+                    html += `<article class="media"><div class="media-content"><p class="title level-right"><span class="level-item">🐘</span><span class="level-item"><a target="_blank" href="${item.url}" rel="noopener">${webmentionTimelineMessages['into_the_fediverse']}</a></span></p></article></div>`;
                 }
 
             });
