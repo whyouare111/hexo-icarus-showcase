@@ -109,9 +109,9 @@
     
     <category term="webmention" scheme="https://whyouare111.github.io/hexo-icarus-showcase/tags/webmention/"/>
     
-    <category term="demo" scheme="https://whyouare111.github.io/hexo-icarus-showcase/tags/demo/"/>
-    
     <category term="IndieWeb" scheme="https://whyouare111.github.io/hexo-icarus-showcase/tags/IndieWeb/"/>
+    
+    <category term="demo" scheme="https://whyouare111.github.io/hexo-icarus-showcase/tags/demo/"/>
     
   </entry>
   
