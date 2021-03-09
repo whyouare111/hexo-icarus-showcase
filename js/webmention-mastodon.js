@@ -1,14 +1,14 @@
 window.addEventListener('load', function () {
-    var webmentionsPromise = window.webmentionContext.webmentionsPromise;
-    var mastodonContext = window.mastodonContext;
-    var mastodonBaseUrl = mastodonContext.mastodonBaseUrl;
+    const webmentionsPromise = window.webmentionContext.webmentionsPromise;
+    const mastodonContext = window.mastodonContext;
+    const mastodonBaseUrl = mastodonContext.mastodonBaseUrl;
 
-    var openModal = function (url) {
+    const openModal = function (url) {
         window.open(url, 'mastodon-intent', 'width=445,height=600,resizable=no,menubar=no,status=no,scrollbars=yes');
     };
     webmentionsPromise && webmentionsPromise
         .then(function (data) {
-            var mastodonMention = data.children.filter(function (item) {
+            const mastodonMention = data.children.filter(function (item) {
                 return item.url.startsWith(mastodonBaseUrl) && item.author.url == mastodonBaseUrl;
             })[0];
 

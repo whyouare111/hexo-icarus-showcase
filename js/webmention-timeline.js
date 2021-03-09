@@ -20,8 +20,9 @@ window.addEventListener('load', function () {
                         }
                         html += `</i>`;
                     }
+                    let publishTime = (item.published && item.published.indexOf('T') > 0) ? item.published : item['wm-received'];
 
-                    html += `<time class="level-item" datetime="${item.published}">${item.published.split('T')[0]}</time></p><p class="title level-left"><i class="level-item">🔗</i><a target="_blank" href="${item.url}" rel="noopener" class="level-item">${item.url}</a></p></div></article>`;
+                    html += `<time class="level-item" datetime="${publishTime}">${publishTime.split('T')[0]}</time></p><p class="title level-left"><i class="level-item">🔗</i><a target="_blank" href="${item.url}" rel="noopener" class="level-item">${item.url}</a></p></div></article>`;
                 }
                 else {
                     html += `<article class="media"><div class="media-content"><p class="title level-right"><span class="level-item">🐘</span><span class="level-item"><a target="_blank" href="${item.url}" rel="noopener">${webmentionTimelineMessages['into_the_fediverse']}</a></span></p></article></div>`;
