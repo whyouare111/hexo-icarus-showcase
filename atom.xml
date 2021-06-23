@@ -6,7 +6,7 @@
   <link href="https://whyouare111.github.io/hexo-icarus-showcase/atom.xml" rel="self"/>
   
   <link href="https://whyouare111.github.io/hexo-icarus-showcase/"/>
-  <updated>2021-03-09T12:24:58.318Z</updated>
+  <updated>2021-06-23T10:32:17.195Z</updated>
   <id>https://whyouare111.github.io/hexo-icarus-showcase/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hodlock</title>
+    <link href="https://whyouare111.github.io/hexo-icarus-showcase/2021/06/23/hodlock-demo/"/>
+    <id>https://whyouare111.github.io/hexo-icarus-showcase/2021/06/23/hodlock-demo/</id>
+    <published>2021-06-22T16:00:00.000Z</published>
+    <updated>2021-06-23T10:32:17.195Z</updated>
+    
+    <content type="html"><![CDATA[<iframe src="https://hodlock.meta.io/QmY8YubXsVm2HnXD2WpNJ1wnqRkzgd2B8bnVP8XGoT1nLC/" width="100%" height="640px" frameborder="0"></iframe>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;iframe src=&quot;https://hodlock.meta.io/QmY8YubXsVm2HnXD2WpNJ1wnqRkzgd2B8bnVP8XGoT1nLC/&quot; width=&quot;100%&quot; height=&quot;640px&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;</summary>
+      
+    
+    
+    
+    <category term="demo" scheme="https://whyouare111.github.io/hexo-icarus-showcase/categories/demo/"/>
+    
+    
+    <category term="Hodlock" scheme="https://whyouare111.github.io/hexo-icarus-showcase/tags/Hodlock/"/>
+    
+  </entry>
   
   <entry>
     <title>独立Blog+Mastodon个人笔记</title>
@@ -99,11 +123,11 @@
     <category term="explore" scheme="https://whyouare111.github.io/hexo-icarus-showcase/categories/explore/"/>
     
     
-    <category term="Fediverse" scheme="https://whyouare111.github.io/hexo-icarus-showcase/tags/Fediverse/"/>
-    
     <category term="瞬Matataki" scheme="https://whyouare111.github.io/hexo-icarus-showcase/tags/%E7%9E%ACMatataki/"/>
     
     <category term="Fan票" scheme="https://whyouare111.github.io/hexo-icarus-showcase/tags/Fan%E7%A5%A8/"/>
+    
+    <category term="Fediverse" scheme="https://whyouare111.github.io/hexo-icarus-showcase/tags/Fediverse/"/>
     
     <category term="IndieWeb" scheme="https://whyouare111.github.io/hexo-icarus-showcase/tags/IndieWeb/"/>
     
@@ -249,7 +273,7 @@
     <link href="https://whyouare111.github.io/hexo-icarus-showcase/2020/11/11/aplayer-demo/"/>
     <id>https://whyouare111.github.io/hexo-icarus-showcase/2020/11/11/aplayer-demo/</id>
     <published>2020-11-10T16:00:00.000Z</published>
-    <updated>2021-02-23T13:28:18.812Z</updated>
+    <updated>2021-06-23T10:29:10.565Z</updated>
     
     <content type="html"><![CDATA[<iframe src="https://10.via0.com/ipfs/QmXmmvy8NJWbpb9qurjwADdaqDuz9HMVCYMoFxicQ2rrj5/aplayer-demo/" width="100%" height="160px" frameborder="0"></iframe>]]></content>
     
