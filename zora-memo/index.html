@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Zora 项目分析备忘 - IndieWeb Hexo Icarus</title><link rel="manifest" href="/hexo-icarus-showcase/manifest.json"><meta name="application-name" content="IndieWeb Hexo Icarus"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="IndieWeb Hexo Icarus"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="开发语言： Typescript 项目主要分为三个部分：  Core: 正如其名，核心部分，包括了 Zora 的智能合约 ZDK cli： 开发者工具包和命令行工具。 第三方项目用这个就能和现成的 Zora 智能合约集成了 Zora V1 Subgraph: 这个是需要跑后端服务的，基于 The Grapth 的索引服务，构建 GraphQL API 查询以太坊和 IPFS 链上的信息  http"><meta property="og:type" content="blog"><meta property="og:title" content="Zora 项目分析备忘"><meta property="og:url" content="https://whyouare111.github.io/hexo-icarus-showcase/zora-memo/index.html"><meta property="og:site_name" content="IndieWeb Hexo Icarus"><meta property="og:description" content="开发语言： Typescript 项目主要分为三个部分：  Core: 正如其名，核心部分，包括了 Zora 的智能合约 ZDK cli： 开发者工具包和命令行工具。 第三方项目用这个就能和现成的 Zora 智能合约集成了 Zora V1 Subgraph: 这个是需要跑后端服务的，基于 The Grapth 的索引服务，构建 GraphQL API 查询以太坊和 IPFS 链上的信息  http"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://whyouare111.github.io/hexo-icarus-showcase/assets/zora-memo/seller.png"><meta property="og:image" content="https://whyouare111.github.io/hexo-icarus-showcase/assets/zora-memo/buyer.png"><meta property="article:published_time" content="2021-03-15T16:00:00.000Z"><meta property="article:modified_time" content="2023-03-31T02:46:43.341Z"><meta property="article:author" content="WhyYouAre"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="../assets/zora-memo/seller.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://whyouare111.github.io/hexo-icarus-showcase/zora-memo/index.html"},"headline":"IndieWeb Hexo Icarus","image":["https://whyouare111.github.io/hexo-icarus-showcase/assets/zora-memo/seller.png","https://whyouare111.github.io/hexo-icarus-showcase/assets/zora-memo/buyer.png"],"datePublished":"2021-03-15T16:00:00.000Z","dateModified":"2023-03-31T02:46:43.341Z","author":{"@type":"Person","name":"WhyYouAre"},"description":"开发语言： Typescript 项目主要分为三个部分：  Core: 正如其名，核心部分，包括了 Zora 的智能合约 ZDK cli： 开发者工具包和命令行工具。 第三方项目用这个就能和现成的 Zora 智能合约集成了 Zora V1 Subgraph: 这个是需要跑后端服务的，基于 The Grapth 的索引服务，构建 GraphQL API 查询以太坊和 IPFS 链上的信息  http"}</script><link rel="canonical" href="https://whyouare111.github.io/hexo-icarus-showcase/zora-memo/index.html"><link rel="icon" href="/hexo-icarus-showcase/img/favicon.svg"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/font-awesome/5.12.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/dracula.css"><link rel="stylesheet" href="https://fonts.loli.net/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/hexo-icarus-showcase/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><link rel="webmention" href="https://webmention.io/whyouare111.github.io_hexo-icarus-showcase_/webmention"><link rel="pingback" href="https://webmention.io/whyouare111.github.io_hexo-icarus-showcase_/xmlrpc"><meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/hexo-icarus-showcase/atom.xml" title="IndieWeb Hexo Icarus" type="application/atom+xml">
+</head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/hexo-icarus-showcase/"><img src="/hexo-icarus-showcase/img/logo.svg" alt="IndieWeb Hexo Icarus" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/hexo-icarus-showcase/">Home</a><a class="navbar-item" href="/hexo-icarus-showcase/archives">Archives</a><a class="navbar-item" href="/hexo-icarus-showcase/categories">Categories</a><a class="navbar-item" href="/hexo-icarus-showcase/tags">Tags</a><a class="navbar-item" href="/hexo-icarus-showcase/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/whyouare111/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card h-entry"><article class="card-content article" role="article"><h1 class="title is-3 is-size-4-mobile">Zora 项目分析备忘</h1><div class="content e-content"><p>开发语言： Typescript</p>
+<p>项目主要分为三个部分：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/ourzora/core">Core</a>: 正如其名，核心部分，包括了 <code>Zora</code> 的智能合约</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/ourzora/zdk">ZDK</a> <a target="_blank" rel="noopener" href="https://github.com/ourzora/cli">cli</a>： 开发者工具包和命令行工具。 第三方项目用这个就能和现成的 <code>Zora</code> 智能合约集成了</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/ourzora/zora-v1-subgraph">Zora V1 Subgraph</a>: 这个是需要跑后端服务的，基于 <a target="_blank" rel="noopener" href="https://thegraph.com/">The Grapth</a> 的索引服务，构建 GraphQL API 查询以太坊和 IPFS 链上的信息</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://zora.co/">https://zora.co/</a> 这样面向终端用户的站点服务本身看来是属于还没有开源的部分，不过可以看出来是靠上面三大部分支撑的</p>
+<p>还有一些外围</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/ourzora/media-metadata-schemas">Media Metadata Schemas</a> 协议本身不检查 metadata, 可以自行定义新的 Metadata Schema 来满足自己项目的需要</li>
+</ul>
+<h2 id="Core"><a href="#Core" class="headerlink" title="Core"></a>Core</h2><ul>
+<li>开发环境 <a target="_blank" rel="noopener" href="https://hardhat.org/">Hardhat</a></li>
+<li>测试框架 <a target="_blank" rel="noopener" href="https://www.chaijs.com/">Chai</a></li>
+<li>以太坊集成方案 <a target="_blank" rel="noopener" href="https://github.com/ethereum-ts/TypeChain">TypeChain</a></li>
+</ul>
+<h3 id="领域建模"><a href="#领域建模" class="headerlink" title="领域建模"></a>领域建模</h3><p>看起来是按照</p>
+<p><code>Cryptomedia = [Hypermedia + Creator + Owner + Market] = Value</code><a target="_blank" rel="noopener" href="https://cryptomedia.wtf/">^1</a></p>
+<p>的理念设计的</p>
+<p>Creator Owner  基本就是直接靠 <code>ERC721</code> 标准解决的，在此基础上增加了对 <code>tokenContent</code> 和 <code>tokenMetadata</code> 的 Hash 和 URI 形成 Media，再将一个 Market 关联上来，我们看到的 Zora NFT 就对应其 Media 智能合约</p>
+<ul>
+<li>Media<ul>
+<li>Market<ul>
+<li>Bid</li>
+<li>Ask</li>
+<li>BidShares</li>
+</ul>
+</li>
+<li>tokenOwner (ERC721 定义)</li>
+<li>tokenCreator</li>
+<li>previousTokenOwner</li>
+<li>tokenContentHash</li>
+<li>tokenURI (ERC721 定义)</li>
+<li>tokenMetadataHash</li>
+<li>tokenMetadataURI</li>
+</ul>
+</li>
+</ul>
+<p>标记了 <code>ERC721 定义</code> 以外的就是 <code>Zora</code> 追加的。大写字母开始的都是一种结构体，靠<code>typechain</code>生成的对应的<code>ts</code>文件</p>
+<h3 id="主要开发-构建命令"><a href="#主要开发-构建命令" class="headerlink" title="主要开发/构建命令"></a>主要开发/构建命令</h3><p>The following assumes <code>node &gt;= 12</code></p>
+<h4 id="Install-Dependencies"><a href="#Install-Dependencies" class="headerlink" title="Install Dependencies"></a>Install Dependencies</h4><figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn</span><br></pre></td></tr></table></figure>
+<h4 id="Compile-Contracts"><a href="#Compile-Contracts" class="headerlink" title="Compile Contracts"></a>Compile Contracts</h4><figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn build</span><br></pre></td></tr></table></figure>
+<h4 id="Start-a-Local-Blockchain"><a href="#Start-a-Local-Blockchain" class="headerlink" title="Start a Local Blockchain"></a>Start a Local Blockchain</h4><figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn chain</span><br></pre></td></tr></table></figure>
+<h4 id="Run-Tests"><a href="#Run-Tests" class="headerlink" title="Run Tests"></a>Run Tests</h4><figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn test</span><br></pre></td></tr></table></figure>
+<h2 id="ZDK"><a href="#ZDK" class="headerlink" title="ZDK"></a>ZDK</h2><p>理所当然地，依赖上面的 <code>Core</code>。在这个库里以 Typescript 的形式定义了对应智能合约领域模型的类，包括<code>Zora</code> <code>BidShares</code> <code>Ask</code> <code>Bid</code> <code>MediaData</code> <code>EIP712Signature</code> <code>EIP712Domain</code>, 还有配套的 <code>Metadata</code> <code>Decimal</code> <code>Address</code> 相关的生成、解析、校验\转换工具</p>
+<ul>
+<li>测试框架 <a target="_blank" rel="noopener" href="https://jestjs.io/">Jest</a></li>
+</ul>
+<h2 id="CLI"><a href="#CLI" class="headerlink" title="CLI"></a>CLI</h2><p>用这个是可以比较容易地体验铸币的感觉的</p>
+<p>rinkeby</p>
+<figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">zora mint uri --rpc-url &lt;infura or alchemy node&gt; \</span><br><span class="line">--wallet-mnemonic &#x27;concert load couple harbor equip island argue ramp clarify fence smart topic&#x27; \</span><br><span class="line">--chain-id 4 \</span><br><span class="line">--content-uri https://ipfs.io/ipfs/bafybeiacyrrjel6qq2mdv6to6fvbzsg64y3g4kbp32h55zfmesx2oe7cwi \</span><br><span class="line">--metadata-uri https://ipfs.io/ipfs/bafybeifvmzeyggdi36igqjiub5bq6vbpn5ebihxgqjbrk5ibqculk4upoy \</span><br><span class="line">--creator-share 10 \</span><br><span class="line">--timeout 10000</span><br></pre></td></tr></table></figure>
+<p>刚好 Matataki 主站也在 Rinkeby 测试链上， content-uri 已经具备，做好一个metadata 上传 IPFS 就可以得到 <code>metadata-uri</code></p>
+<p>当然不做任何改造用这个调到的智能合约就是官方的了, 实验还是没问题的</p>
+<h2 id="Zora-V1-Subgraph"><a href="#Zora-V1-Subgraph" class="headerlink" title="Zora V1 Subgraph"></a>Zora V1 Subgraph</h2><p>简单来说就是搜索服务</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://graphql.org/">GraphQL</a> Query API</li>
+<li><a target="_blank" rel="noopener" href="https://fleek.co/">Fleek</a>  IPFS pinning service</li>
+<li><a target="_blank" rel="noopener" href="https://thegraph.com/">The Graph</a> Blockchain Indexer<ul>
+<li>Postgresql</li>
+</ul>
+</li>
+</ul>
+<h2 id="制作实验"><a href="#制作实验" class="headerlink" title="制作实验"></a>制作实验</h2><p>在 Rinkeby 上</p>
+<p>Creator 地址 <code>0xbc820824caef8ac41afbaf8f286dd7796e478827</code></p>
+<p><a target="_blank" rel="noopener" href="https://arweave.net/cgcaeQKCzbbY5bOAdZgkUiS2_HVrLGUTLtw7z4YmXzA">tokenURI</a></p>
+<p><a target="_blank" rel="noopener" href="https://arweave.net/w7y5m68ApWWBT2b-v1orK1HC550_1ILFP5Z6g-IYLsk">metadataURI</a></p>
+<blockquote>
+<p>Successfully submitted Mint Transaction to the Zora Media Contract.<br>Contract Address: 0x7C2668BD0D3c050703CEcC956C11Bd520c26f7d4.<br>ChainId 4.<br>Transaction Hash: 0x8da9696ae7487d5570f7830ada224ed42a067b910769de4c5699a1c5cab23d06.</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://rinkeby.etherscan.io/token/0x7c2668bd0d3c050703cecc956c11bd520c26f7d4">区块链浏览器中查看Zora Media 智能合约</a></p>
+<p>用 <code>balanceOf</code> 可以确认到指定地址拥有的 ZORA 的 总数<br>用 <code>tokenOfOwnerByIndex</code> 可以确认到指定地址拥有的 各个 ZORA 的 TokenID</p>
+<p>二者结合是可以遍历出个人持有的各个 ZORA Token的 TokenID，进一步拿到 tokenURI 和 metadataURI</p>
+<p>写方面可以用 <code>setAsk</code> 报价</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;amount:1000000,currency:&quot;0x280Be10b609F95f70E82c0D7151543f59102f47D&quot;&#125;</span><br></pre></td></tr></table></figure>
+<p>指定 岛岛币在 Rinkeby 上的地址来报个卖家价格</p>
+<p>成功执行事务了</p>
+<p><code>https://rinkeby.etherscan.io/tx/0x7d1afd67e88004eb728efdbecb4de080c7a4f6c634ef8bf623de37a24ea42ed0</code></p>
+<p><a target="_blank" rel="noopener" href="https://rinkeby.etherscan.io/token/0x7c2668bd0d3c050703cecc956c11bd520c26f7d4">区块链浏览器中查看Zora Token</a></p>
+<p>Overview-&gt;Input Data:<br>| # | Name | Type | Data |<br>| - | —- | —- | —- |<br>| 0 | data.tokenURI | string | <a target="_blank" rel="noopener" href="https://arweave.net/cgcaeQKCzbbY5bOAdZgkUiS2_HVrLGUTLtw7z4YmXzA">https://arweave.net/cgcaeQKCzbbY5bOAdZgkUiS2_HVrLGUTLtw7z4YmXzA</a> |<br>| 0 | data.metadataURI | string |<a target="_blank" rel="noopener" href="https://arweave.net/w7y5m68ApWWBT2b-v1orK1HC550_1ILFP5Z6g-IYLsk">https://arweave.net/w7y5m68ApWWBT2b-v1orK1HC550_1ILFP5Z6g-IYLsk</a> |<br>| 0 | data.contentHash | bytes32 | 0x43811d3168b5109c9b6497b574e670a24191db9463065fe8a1cd79f7550d3259 |<br>| 0 | data.metadataHash | bytes32 | 0x6546bae0a94664535b214df342ab8008d9549e2e0c1d1f886dbd1f6d180e7467 |</p>
+<p>可以确认到我们的两个链接</p>
+<p><a target="_blank" rel="noopener" href="https://rinkeby.etherscan.io/token/0x7c2668bd0d3c050703cecc956c11bd520c26f7d4">区块链浏览器中查看Zora Market</a></p>
+<p>Media 和 Market 两个协议是有互指的.</p>
+<p>从具体的 Hash 找到 一个还是比较容易的，这个在客户端保存亦可。或者存到社交消息上亦可。</p>
+<p>Market 的 Ask 和 Bid 只能 从 Media 去调用，会检查。</p>
+<p>从 <code>currentAskForToken</code> 输入之前做的NFT的 <code>tokenID</code> 可以看到之前 <code>setAsk</code>的报价信息</p>
+<p>bidShares 结构</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;creator: &#123;value:15&#125;,owner: &#123;value:80&#125;,prevOwner: &#123;value:5&#125;&#125;</span><br></pre></td></tr></table></figure>
+<p>setBid</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;amount:900000,currency:&quot;0x280Be10b609F95f70E82c0D7151543f59102f47D&quot;, bidder:&quot;0x9FD9685148f62833A0c868D65B83AC04C5B43081&quot;,recipient:&quot;0x7c2668bd0d3c050703cecc956c11bd520c26f7d4&quot;,sellOnShare:&#123;value:20&#125;&#125;</span><br></pre></td></tr></table></figure>
+<p>先换成其他 Fan 票 测试</p>
+<p>用 <a target="_blank" rel="noopener" href="https://rinkeby.etherscan.io/address/0x0c064faD09Ef700F9087B9ca47867ac24fdAD2f3">Care</a> 测试</p>
+<p>换了多个 recipient 测试, 也就是说 “可以买给别的地址”, 买单的是 <code>bidder</code>,这里就买给自己</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;amount:1,currency:&quot;0x0c064faD09Ef700F9087B9ca47867ac24fdAD2f3&quot;, bidder:&quot;0x9FD9685148f62833A0c868D65B83AC04C5B43081&quot;,recipient:&quot;0x9FD9685148f62833A0c868D65B83AC04C5B43081&quot;,sellOnShare:&#123;value:1&#125;&#125;</span><br></pre></td></tr></table></figure>
+<p>这样依然会失败</p>
+<p>从安全性角度来说，还要去 Fan票 合约那边 approve ，否则无法支付</p>
+<p>简单来说 ERC20 <code>transferFrom</code> 的条件无法满足</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function transferFrom(address sender, address recipient, uint256 amount) public virtual override returns (bool) &#123;</span><br><span class="line">     _transfer(sender, recipient, amount);</span><br><span class="line"></span><br><span class="line">     uint256 currentAllowance &#x3D; _allowances[sender][_msgSender()];</span><br><span class="line">     require(currentAllowance &gt;&#x3D; amount, &quot;ERC20: transfer amount exceeds allowance&quot;);</span><br><span class="line">     _approve(sender, _msgSender(), currentAllowance - amount);</span><br><span class="line"></span><br><span class="line">     return true;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<p>在 Zora 的合约里就是这</p>
+<figure class="highlight plain"><figcaption><span>Market.sol</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> IERC20 token &#x3D; IERC20(bid.currency);</span><br><span class="line">&#x2F;&#x2F; We must check the balance that was actually transferred to the market,</span><br><span class="line"> &#x2F;&#x2F; as some tokens impose a transfer fee and would not actually transfer the</span><br><span class="line"> &#x2F;&#x2F; full amount to the market, resulting in locked funds for refunds &amp; bid acceptance</span><br><span class="line"> uint256 beforeBalance &#x3D; token.balanceOf(address(this));</span><br><span class="line"> token.safeTransferFrom(spender, address(this), bid.amount);</span><br><span class="line"> uint256 afterBalance &#x3D; token.balanceOf(address(this));        </span><br></pre></td></tr></table></figure>
+<p><code>token.safeTransferFrom(spender, address(this), bid.amount);</code> 这个要成功需要 先在 Fan 票的合约里 approve 给 spender （Market 合约地址）</p>
+<p>都准备好之后重新从 <code>setAsk</code> 开始</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;amount:100,currency:&quot;0x0c064faD09Ef700F9087B9ca47867ac24fdAD2f3&quot;&#125;</span><br></pre></td></tr></table></figure>
+<p>setBid</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;amount:1,currency:&quot;0x0c064faD09Ef700F9087B9ca47867ac24fdAD2f3&quot;, bidder:&quot;0x9FD9685148f62833A0c868D65B83AC04C5B43081&quot;,recipient:&quot;0x7c2668bd0d3c050703cecc956c11bd520c26f7d4&quot;,sellOnShare:&#123;value:1&#125;&#125;</span><br></pre></td></tr></table></figure>
+<p>事务可以完成确认了。<code>Care</code>会转给这个地址： <code>0x85e946e1Bd35EC91044Dc83A5DdAB2B6A262ffA6</code> 也就是 Market</p>
+<p>接着报价</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;amount:100,currency:&quot;0x0c064faD09Ef700F9087B9ca47867ac24fdAD2f3&quot;, bidder:&quot;0x9FD9685148f62833A0c868D65B83AC04C5B43081&quot;,recipient:&quot;0x9FD9685148f62833A0c868D65B83AC04C5B43081&quot;,sellOnShare:&#123;value:20&#125;&#125;</span><br></pre></td></tr></table></figure>
+<p>这样交易就完成了，自动撮合逻辑对应合约里的这部分</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; If a bid meets the criteria for an ask, automatically accept the bid.</span><br><span class="line">&#x2F;&#x2F; If no ask is set or the bid does not meet the requirements, ignore.</span><br><span class="line">if (</span><br><span class="line">    _tokenAsks[tokenId].currency !&#x3D; address(0) &amp;&amp;</span><br><span class="line">    bid.currency &#x3D;&#x3D; _tokenAsks[tokenId].currency &amp;&amp;</span><br><span class="line">    bid.amount &gt;&#x3D; _tokenAsks[tokenId].amount</span><br><span class="line">) &#123;</span><br><span class="line">    &#x2F;&#x2F; Finalize exchange</span><br><span class="line">    _finalizeNFTTransfer(tokenId, bid.bidder);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>currency 对得上， amount超过当前ask的，满足条件<br><img src="../assets/zora-memo/seller.png" alt="交易完成后卖家 MetaMask 的样子"><br><img src="../assets/zora-memo/buyer.png" alt="交易完成后买家 MetaMask 的样子"></p>
+<p>依然可以继续 setBid<br>因为 approve 的没有那么多，所以出大的amount会失败</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;amount:20000,currency:&quot;0x0c064faD09Ef700F9087B9ca47867ac24fdAD2f3&quot;, bidder:&quot;0x9FD9685148f62833A0c868D65B83AC04C5B43081&quot;,recipient:&quot;0x9FD9685148f62833A0c868D65B83AC04C5B43081&quot;,sellOnShare:&#123;value:20&#125;&#125;</span><br></pre></td></tr></table></figure>
+<p>一次1，一次100，之前 approve 了10000，所以现在最多报价到9899</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;amount:9899,currency:&quot;0x0c064faD09Ef700F9087B9ca47867ac24fdAD2f3&quot;, bidder:&quot;0x9FD9685148f62833A0c868D65B83AC04C5B43081&quot;,recipient:&quot;0x7c2668bd0d3c050703cecc956c11bd520c26f7d4&quot;,sellOnShare:&#123;value:10&#125;&#125;</span><br></pre></td></tr></table></figure>
+<p>这个是可以成功的</p>
+<p>不过之前设置的Share非常小，只有 20， 无论是做 <code>setAsk</code> 还是 <code>acceptBid</code> 都无法满足那个比例</p>
+<blockquote>
+<p>Fail with error ‘Market: Ask invalid for share splitting’</p>
+</blockquote>
+<p>因为目前 BidShares 是这种数字，之前设置的位数不对</p>
+<blockquote>
+<p>preOwner:  20<br>creator:  10000000000000000000<br>owner:  89999999999999999980</p>
+</blockquote>
+<p>另外交易过程中注意 Market <code>0x85e946e1Bd35EC91044Dc83A5DdAB2B6A262ffA6</code> 的 <code>allowance</code>  变化，用完了需要重新去 approve 才能继续回来 <code>setBid</code></p>
+<p>先测试到这里，可以去各自合约里确认这笔交易，也能看到 NFT 的 owner 发生变化了</p>
+</div><div class="article-licensing box"><div class="licensing-title"><p>Zora 项目分析备忘</p><p><a href="https://whyouare111.github.io/hexo-icarus-showcase/zora-memo/index.html">https://whyouare111.github.io/hexo-icarus-showcase/zora-memo/index.html</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>WhyYouAre</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2021-03-16</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2023-03-31</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a class="icon" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a><a class="icon" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="share level is-mobile"><a class="level-item button is-transparent is-marginless mastodon-reply" rel="mastodon-interact" title="回复" href="javascript:mastodonContext.reply()"><i class="fa fa-reply fa-fw"></i></a><a class="level-item button is-transparent is-marginless mastodon-reblog" rel="mastodon-interact" title="转嘟" href="javascript:mastodonContext.reblog()"><i class="fa fa-retweet fa-fw"></i></a><a class="level-item button is-transparent is-marginless mastodon-favourite" rel="mastodon-interact" title="喜欢" href="javascript:mastodonContext.favourite()"><i class="fas fa-star"></i></a></div><script>var mastodonContext = { mastodonBaseUrl:'https://mastodon.federarks.xyz/@blog', reply:function(){},reblog:function(){},favourite: function(){} }; 
+        
+        </script><script src="/hexo-icarus-showcase/js/webmention-mastodon.js"></script></article></div><!--!--><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div class="timeline webmention-timeline"></div><script>
+            var webmentionTimelineMessages = {
+               "into_the_fediverse" : "进入联邦宇宙"
+            };
+        </script><script src="/hexo-icarus-showcase/js/webmention-timeline.js"></script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div class="h-card"><figure class="image is-128x128 mx-auto mb-2"><img class="u-photo avatar is-rounded" src="/hexo-icarus-showcase/img/tenprint.png" alt="WhyYouAre"></figure><a class="title is-size-4 is-block u-url u-uid p-name p-nickname" rel="me" href="https://whyouare111.github.io/hexo-icarus-showcase" style="line-height:inherit;">WhyYouAre</a><p class="is-size-6 is-block p-note">饰られた虚実</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>碎片海</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/hexo-icarus-showcase/archives"><p class="title">16</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/hexo-icarus-showcase/categories"><p class="title">3</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/hexo-icarus-showcase/tags"><p class="title">15</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://mastodon.social/@WhyYouAre" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile"><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Github" href="https://github.com/whyouare111"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Mastodon" href="https://mastodon.social/@WhyYouAre"><i class="fab fa-mastodon"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/hexo-icarus-showcase/atom.xml"><i class="fas fa-rss"></i></a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo</span></span><span class="level-right"><span class="level-item tag">hexo.io</span></span></a></li><li><a class="level is-mobile" href="https://bulma.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Bulma</span></span><span class="level-right"><span class="level-item tag">bulma.io</span></span></a></li></ul></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/hexo-icarus-showcase/categories/demo/"><span class="level-start"><span class="level-item">demo</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li><li><a class="level is-mobile" href="/hexo-icarus-showcase/categories/explore/"><span class="level-start"><span class="level-item">explore</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/hexo-icarus-showcase/categories/%E4%BA%A4%E6%B5%81/"><span class="level-start"><span class="level-item">交流</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-03-31T02:47:31.000Z">2023-03-31</time></p><p class="title"><a href="/hexo-icarus-showcase/2023/03/31/reply-to-ryen-xiang-20230331/">回复《webmention 实现参考》</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-06-22T16:00:00.000Z">2021-06-23</time></p><p class="title"><a href="/hexo-icarus-showcase/2021/06/23/hodlock-demo/">Hodlock</a></p><p class="categories"><a href="/hexo-icarus-showcase/categories/demo/">demo</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-04-13T02:31:42.000Z">2021-04-13</time></p><p class="title"><a href="/hexo-icarus-showcase/2021/04/13/nfte-demo/">NFT 嵌入示例1</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-04-07T01:58:15.000Z">2021-04-07</time></p><p class="title"><a href="/hexo-icarus-showcase/2021/04/07/likey-memo/">likey-memo</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-03-11T16:00:00.000Z">2021-03-12</time></p><p class="title"><a href="/hexo-icarus-showcase/2021/03/12/social-money-800/">社交代币 800</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/hexo-icarus-showcase/archives/2023/03/"><span class="level-start"><span class="level-item">三月 2023</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/hexo-icarus-showcase/archives/2021/06/"><span class="level-start"><span class="level-item">六月 2021</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/hexo-icarus-showcase/archives/2021/04/"><span class="level-start"><span class="level-item">四月 2021</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/hexo-icarus-showcase/archives/2021/03/"><span class="level-start"><span class="level-item">三月 2021</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/hexo-icarus-showcase/archives/2021/02/"><span class="level-start"><span class="level-item">二月 2021</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/hexo-icarus-showcase/archives/2021/01/"><span class="level-start"><span class="level-item">一月 2021</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/hexo-icarus-showcase/archives/2020/12/"><span class="level-start"><span class="level-item">十二月 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/hexo-icarus-showcase/archives/2020/11/"><span class="level-start"><span class="level-item">十一月 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/hexo-icarus-showcase/archives/2016/03/"><span class="level-start"><span class="level-item">三月 2016</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/hexo-icarus-showcase/tags/APlayer/"><span class="tag">APlayer</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/hexo-icarus-showcase/tags/Bulma/"><span class="tag">Bulma</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/hexo-icarus-showcase/tags/Fan%E7%A5%A8/"><span class="tag">Fan票</span><span class="tag">5</span></a></div><div class="control"><a class="tags has-addons" href="/hexo-icarus-showcase/tags/Fediverse/"><span class="tag">Fediverse</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/hexo-icarus-showcase/tags/Hexo/"><span class="tag">Hexo</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/hexo-icarus-showcase/tags/Hodlock/"><span class="tag">Hodlock</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/hexo-icarus-showcase/tags/IPFS/"><span class="tag">IPFS</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/hexo-icarus-showcase/tags/Icarus/"><span class="tag">Icarus</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/hexo-icarus-showcase/tags/IndieWeb/"><span class="tag">IndieWeb</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/hexo-icarus-showcase/tags/demo/"><span class="tag">demo</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/hexo-icarus-showcase/tags/mastodon/"><span class="tag">mastodon</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/hexo-icarus-showcase/tags/quote/"><span class="tag">quote</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/hexo-icarus-showcase/tags/webmention/"><span class="tag">webmention</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/hexo-icarus-showcase/tags/%E5%88%9B%E4%BD%9C%E8%80%85%E7%BB%8F%E6%B5%8E/"><span class="tag">创作者经济</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/hexo-icarus-showcase/tags/%E7%9E%ACMatataki/"><span class="tag">瞬Matataki</span><span class="tag">5</span></a></div></div></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/hexo-icarus-showcase/"><img src="/hexo-icarus-showcase/img/logo.svg" alt="IndieWeb Hexo Icarus" height="28"></a><p class="is-size-7"><span>&copy; 2023 WhyYouAre</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/whyouare111/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" async></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/hexo-icarus-showcase/js/column.js"></script><script src="/hexo-icarus-showcase/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/hexo-icarus-showcase/js/back_to_top.js" defer></script><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><script src="https://unpkg.com/fanlocker@1.0.6/dist/fanlocker.js"></script><script>var fl = new FanLocker({
+            clientId: '005182742435770',
+            clientSecret: 'baf39600120ba3f7'
+        });     
+        </script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+            'HTML-CSS': {
+                matchFontHeight: false
+            },
+            SVG: {
+                matchFontHeight: false
+            },
+            CommonHTML: {
+                matchFontHeight: false
+            },
+            tex2jax: {
+                inlineMath: [
+                    ['$','$'],
+                    ['\\(','\\)']
+                ]
+            }
+        });</script><script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script><!--!--><script>var webmentionContext = { baseUrl:'https://webmention.io'}; 
+    
+    </script><script src="/hexo-icarus-showcase/js/webmention.js"></script><script src="/hexo-icarus-showcase/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/hexo-icarus-showcase/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/hexo-icarus-showcase/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
