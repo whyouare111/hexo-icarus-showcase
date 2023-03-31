@@ -6,7 +6,7 @@
   <link href="https://whyouare111.github.io/hexo-icarus-showcase/atom.xml" rel="self"/>
   
   <link href="https://whyouare111.github.io/hexo-icarus-showcase/"/>
-  <updated>2023-03-31T02:49:49.773Z</updated>
+  <updated>2023-03-31T03:03:09.148Z</updated>
   <id>https://whyouare111.github.io/hexo-icarus-showcase/</id>
   
   <author>
@@ -21,14 +21,14 @@
     <link href="https://whyouare111.github.io/hexo-icarus-showcase/2023/03/31/reply-to-ryen-xiang-20230331/"/>
     <id>https://whyouare111.github.io/hexo-icarus-showcase/2023/03/31/reply-to-ryen-xiang-20230331/</id>
     <published>2023-03-31T02:47:31.000Z</published>
-    <updated>2023-03-31T02:49:49.773Z</updated>
+    <updated>2023-03-31T03:03:09.148Z</updated>
     
-    <content type="html"><![CDATA[<p>几年前的探索被搜到总结了这么好的文章，感觉挺惊喜的。<br>啊，如果是用 webmention.io 的服务的话，订阅其 RSS Feed 接受 Webmention 我认为是个不错的实践，配合 FreshRSS 等服务可做到多端同步。<br>休眠状态的 Feed 突然有提示也算惊喜啊。</p>]]></content>
+    <content type="html"><![CDATA[<p><a href="https://blog.xiang578.com/note/641ea60f-a31e-4979-9327-c50509c146e3.html">webmention 实现参考</a><br>几年前的探索被搜到总结了这么好的文章，感觉挺惊喜的。<br>如果是用 webmention.io 的服务的话，订阅其 RSS Feed 接受 Webmention 提醒这个实践看来确实还是能工作的，配合 FreshRSS 等服务可做到多端同步。<br>Feed 突然有提示也算惊喜了。</p>]]></content>
     
     
       
       
-    <summary type="html">&lt;p&gt;几年前的探索被搜到总结了这么好的文章，感觉挺惊喜的。&lt;br&gt;啊，如果是用 webmention.io 的服务的话，订阅其 RSS Feed 接受 Webmention 我认为是个不错的实践，配合 FreshRSS 等服务可做到多端同步。&lt;br&gt;休眠状态的 Feed 突然有提</summary>
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://blog.xiang578.com/note/641ea60f-a31e-4979-9327-c50509c146e3.html&quot;&gt;webmention 实现参考&lt;/a&gt;&lt;br&gt;几年前的探索被搜到总结了这么好的文章，感觉挺惊喜的。&lt;br&gt;如</summary>
       
     
     
@@ -222,11 +222,11 @@
     <category term="explore" scheme="https://whyouare111.github.io/hexo-icarus-showcase/categories/explore/"/>
     
     
+    <category term="Fediverse" scheme="https://whyouare111.github.io/hexo-icarus-showcase/tags/Fediverse/"/>
+    
     <category term="瞬Matataki" scheme="https://whyouare111.github.io/hexo-icarus-showcase/tags/%E7%9E%ACMatataki/"/>
     
     <category term="Fan票" scheme="https://whyouare111.github.io/hexo-icarus-showcase/tags/Fan%E7%A5%A8/"/>
-    
-    <category term="Fediverse" scheme="https://whyouare111.github.io/hexo-icarus-showcase/tags/Fediverse/"/>
     
     <category term="IndieWeb" scheme="https://whyouare111.github.io/hexo-icarus-showcase/tags/IndieWeb/"/>
     
