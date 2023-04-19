@@ -6,7 +6,7 @@
   <link href="https://whyouare111.github.io/hexo-icarus-showcase/atom.xml" rel="self"/>
   
   <link href="https://whyouare111.github.io/hexo-icarus-showcase/"/>
-  <updated>2023-03-31T03:03:09.148Z</updated>
+  <updated>2023-04-19T02:47:47.843Z</updated>
   <id>https://whyouare111.github.io/hexo-icarus-showcase/</id>
   
   <author>
@@ -17,11 +17,33 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>回复《Shoka:+Webmention》</title>
+    <link href="https://whyouare111.github.io/hexo-icarus-showcase/2023/04/19/reply-to-mirakelor-20230419/"/>
+    <id>https://whyouare111.github.io/hexo-icarus-showcase/2023/04/19/reply-to-mirakelor-20230419/</id>
+    <published>2023-04-19T02:20:10.000Z</published>
+    <updated>2023-04-19T02:47:47.843Z</updated>
+    
+    <content type="html"><![CDATA[<p>感谢 <a href="https://monocle.js.org/webmention/">Shoka:+Webmention</a> 的提及。<br>其实周日就在 RSS Fead Reader 里确认到这个消息了，忙于其他事第三天才回复。<br>webmention 能自动发送在改善使用体验上是必要的，之前尝试和 Mastodon 整合的时候用了 Huginn， 订阅 Feed 然后发到 Mastodon 和 Webmention API 的方式。<br>不过 Huginn 失修之后这个流程就坏掉了，记得是跑着跑着把 VPS 拉挂了，当时也没太在意就先关了再说。</p><p>逐渐开始有 webmention 往来的话还是打算抽空恢复起来。<a href="https://www.webmention.app/">https://www.webmention.app/</a> 里基本概括了能用的方案和取舍。<br>不太想用 IFTTT 而是继续这些，果然还是看有没开源是否可以自部署吧。虽然懒癌发作的话自己没好好维护服务就会导致服务质量根本比不上用那些别人部署的，从这个角度说用稳定的镜像+容器服务也是个路子。</p><p>立个 Flag 抽个时间把这个站配个自定义域名，也不带 path，更符合 IndieWeb 相关实践， 更好地使用相关服务，比如 <a href="https://fed.brid.gy/">https://fed.brid.gy/</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;感谢 &lt;a href=&quot;https://monocle.js.org/webmention/&quot;&gt;Shoka:+Webmention&lt;/a&gt; 的提及。&lt;br&gt;其实周日就在 RSS Fead Reader 里确认到这个消息了，忙于其他事第三天才回复。&lt;br&gt;webmention</summary>
+      
+    
+    
+    
+    
+    <category term="webmention" scheme="https://whyouare111.github.io/hexo-icarus-showcase/tags/webmention/"/>
+    
+  </entry>
+  
+  <entry>
     <title>回复《webmention 实现参考》</title>
     <link href="https://whyouare111.github.io/hexo-icarus-showcase/2023/03/31/reply-to-ryen-xiang-20230331/"/>
     <id>https://whyouare111.github.io/hexo-icarus-showcase/2023/03/31/reply-to-ryen-xiang-20230331/</id>
     <published>2023-03-31T02:47:31.000Z</published>
-    <updated>2023-03-31T03:03:09.148Z</updated>
+    <updated>2023-04-19T02:35:45.268Z</updated>
     
     <content type="html"><![CDATA[<p><a href="https://blog.xiang578.com/note/641ea60f-a31e-4979-9327-c50509c146e3.html">webmention 实现参考</a><br>几年前的探索被搜到总结了这么好的文章，感觉挺惊喜的。<br>如果是用 webmention.io 的服务的话，订阅其 RSS Feed 接受 Webmention 提醒这个实践看来确实还是能工作的，配合 FreshRSS 等服务可做到多端同步。<br>Feed 突然有提示也算惊喜了。</p>]]></content>
     
@@ -33,6 +55,8 @@
     
     
     
+    
+    <category term="webmention" scheme="https://whyouare111.github.io/hexo-icarus-showcase/tags/webmention/"/>
     
   </entry>
   
@@ -222,11 +246,11 @@
     <category term="explore" scheme="https://whyouare111.github.io/hexo-icarus-showcase/categories/explore/"/>
     
     
-    <category term="Fediverse" scheme="https://whyouare111.github.io/hexo-icarus-showcase/tags/Fediverse/"/>
-    
     <category term="瞬Matataki" scheme="https://whyouare111.github.io/hexo-icarus-showcase/tags/%E7%9E%ACMatataki/"/>
     
     <category term="Fan票" scheme="https://whyouare111.github.io/hexo-icarus-showcase/tags/Fan%E7%A5%A8/"/>
+    
+    <category term="Fediverse" scheme="https://whyouare111.github.io/hexo-icarus-showcase/tags/Fediverse/"/>
     
     <category term="IndieWeb" scheme="https://whyouare111.github.io/hexo-icarus-showcase/tags/IndieWeb/"/>
     
