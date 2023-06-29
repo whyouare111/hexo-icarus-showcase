@@ -6,7 +6,7 @@
   <link href="https://whyouare111.github.io/hexo-icarus-showcase/atom.xml" rel="self"/>
   
   <link href="https://whyouare111.github.io/hexo-icarus-showcase/"/>
-  <updated>2023-04-19T02:47:47.843Z</updated>
+  <updated>2023-06-29T07:42:19.058Z</updated>
   <id>https://whyouare111.github.io/hexo-icarus-showcase/</id>
   
   <author>
@@ -17,13 +17,35 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>切换到个人域名</title>
+    <link href="https://whyouare111.github.io/hexo-icarus-showcase/2023/06/29/personal-domain/"/>
+    <id>https://whyouare111.github.io/hexo-icarus-showcase/2023/06/29/personal-domain/</id>
+    <published>2023-06-29T10:27:04.000Z</published>
+    <updated>2023-06-29T07:42:19.058Z</updated>
+    
+    <content type="html"><![CDATA[<p>之前立的 flag, 保留之前的 <a href="https://whyouare111.github.io/hexo-icarus-showcase">github.io </a> 域名的同时，增加部署到个人域名,也就是在 <a href="https://whyouare.federarks.xyz/%E3%80%82">https://whyouare.federarks.xyz/。</a></p><p>1.复制了一份工程，创建了一个软链接，在新的工程目录下维护好 <code>_config.icarus.yml</code></p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">plugins:</span></span><br><span class="line">  <span class="attr">webmention:</span></span><br><span class="line">    <span class="attr">baseUrl:</span> <span class="string">https://webmention.io</span></span><br><span class="line">    <span class="attr">link:</span> <span class="string">https://webmention.io/whyouare.federarks.xyz/webmention</span></span><br><span class="line">    <span class="attr">pingbackLink:</span> <span class="string">https://webmention.io/whyouare.federarks.xyz/xmlrpc</span></span><br></pre></td></tr></table></figure><p>和 <code>_config.yml</code></p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">url:</span> <span class="string">https://whyouare.federarks.xyz</span></span><br><span class="line"><span class="attr">root:</span> <span class="string">/</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@whyouare111.github.com:whyouare111/f_blog.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">main</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">WhyYouAre</span></span><br><span class="line">  <span class="attr">email:</span> <span class="string">whyouare556@protonmail.com</span></span><br></pre></td></tr></table></figure><p>然后去 GitHub 在 Bio 里加上这个站点的链接，<a href="https://webmention.io/">https://webmention.io</a> 和 <a href="https://telegraph.p3k.io/">https://telegraph.p3k.io/</a> 等 IndieWeb 服务就可以用域名登录了。</p><p>TODO 尝试装配 brid.gy 相关服务</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;之前立的 flag, 保留之前的 &lt;a href=&quot;https://whyouare111.github.io/hexo-icarus-showcase&quot;&gt;github.io &lt;/a&gt; 域名的同时，增加部署到个人域名,也就是在 &lt;a href=&quot;https://whyoua</summary>
+      
+    
+    
+    
+    
+    <category term="IndieWeb" scheme="https://whyouare111.github.io/hexo-icarus-showcase/tags/IndieWeb/"/>
+    
+  </entry>
+  
+  <entry>
     <title>回复《Shoka:+Webmention》</title>
     <link href="https://whyouare111.github.io/hexo-icarus-showcase/2023/04/19/reply-to-mirakelor-20230419/"/>
     <id>https://whyouare111.github.io/hexo-icarus-showcase/2023/04/19/reply-to-mirakelor-20230419/</id>
     <published>2023-04-19T02:20:10.000Z</published>
-    <updated>2023-04-19T02:47:47.843Z</updated>
+    <updated>2023-04-19T03:31:40.512Z</updated>
     
-    <content type="html"><![CDATA[<p>感谢 <a href="https://monocle.js.org/webmention/">Shoka:+Webmention</a> 的提及。<br>其实周日就在 RSS Fead Reader 里确认到这个消息了，忙于其他事第三天才回复。<br>webmention 能自动发送在改善使用体验上是必要的，之前尝试和 Mastodon 整合的时候用了 Huginn， 订阅 Feed 然后发到 Mastodon 和 Webmention API 的方式。<br>不过 Huginn 失修之后这个流程就坏掉了，记得是跑着跑着把 VPS 拉挂了，当时也没太在意就先关了再说。</p><p>逐渐开始有 webmention 往来的话还是打算抽空恢复起来。<a href="https://www.webmention.app/">https://www.webmention.app/</a> 里基本概括了能用的方案和取舍。<br>不太想用 IFTTT 而是继续这些，果然还是看有没开源是否可以自部署吧。虽然懒癌发作的话自己没好好维护服务就会导致服务质量根本比不上用那些别人部署的，从这个角度说用稳定的镜像+容器服务也是个路子。</p><p>立个 Flag 抽个时间把这个站配个自定义域名，也不带 path，更符合 IndieWeb 相关实践， 更好地使用相关服务，比如 <a href="https://fed.brid.gy/">https://fed.brid.gy/</a></p>]]></content>
+    <content type="html"><![CDATA[<p>感谢 <a href="https://monocle.js.org/webmention/">Shoka:+Webmention</a> 的提及。<br>其实周日就在 RSS Fead Reader 里确认到这个消息了，忙于其他事第三天才回复。<br>webmention 能自动发送在改善使用体验上是必要的，之前尝试和 Mastodon 整合的时候用了 Huginn， 订阅 Feed 然后发到 Mastodon 和 Webmention API 的方式。<br>不过 Huginn 失修之后这个流程就坏掉了，记得是跑着跑着把 VPS 拉挂了，当时也没太在意就先关了再说。</p><p>逐渐开始有 webmention 往来的话还是打算抽空恢复起来。<a href="https://www.webmention.app/">https://www.webmention.app/</a> 里基本概括了能用的方案和取舍。考虑到之前主要用的是 <a href="https://telegraph.p3k.io/">https://telegraph.p3k.io/</a> 的服务，感觉如果切换服务 + 根据 Feed 自动发送 webmention 可能会导致重复提及，这篇依然手动操作。<br>不太想用 IFTTT 而是继续这些，果然还是看有没开源是否可以自部署吧。虽然懒癌发作的话自己没好好维护服务就会导致服务质量根本比不上用那些别人部署的，从这个角度说用稳定的镜像+容器服务也是个路子。</p><p>立个 Flag 抽个时间把这个站配个自定义域名，也不带 path，更符合 IndieWeb 相关实践， 更好地使用相关服务，比如 <a href="https://fed.brid.gy/">https://fed.brid.gy/</a></p>]]></content>
     
     
       
